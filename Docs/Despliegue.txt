@@ -1,0 +1,35 @@
+RENDER - DESPLIEGUE DEL FRONTEND Y BACKEND
+
+************* Despliegue del Backend (Django) ************************
+
+ 
+Crea una cuenta en Render: Ve a Render y regístrate.
+
+Crea un nuevo servicio web:
+
+En el panel de Render, haz clic en "New" y luego en "Web Service".
+Conecta tu cuenta de GitHub y selecciona el repositorio de tu proyecto de Django.
+Configuración del servicio:
+
+En "Environment", selecciona Python. Configura el comando de despliegue:
+ gunicorn yummyapp.wsgi --log-file -
+
+ Agrega las variables de entorno que necesitas, como SECRET_KEY, DEBUG=False, etc.
+Configura tu base de datos: Render ofrece PostgreSQL gratuito.
+
+Desde el panel, crea una base de datos PostgreSQL y anota los detalles.
+Añade la URL de conexión en las variables de entorno de tu proyecto (DATABASE_URL).
+Despliegue: Render comenzará a construir tu aplicación y estará lista en unos minutos. La URL del backend será algo como https://your-app.onrender.com.
+
+******************* DESPLIEGUE DEL FRONTEND *********************************
+
+Crea un nuevo Static Site:
+
+En el panel de Render, haz clic en "New" y selecciona "Static Site".
+Conecta tu repositorio de GitHub donde está tu aplicación React.
+Configuración:
+
+Configura el comando de construcción : npm run build
+
+En "Publish directory", escribe build para que Render sepa que ahí está tu aplicación compilada.
+Despliegue: Render construirá y publicará tu aplicación React. Obtendrás una URL para tu frontend, como https://your-frontend.onrender.com.
